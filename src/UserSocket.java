@@ -16,6 +16,9 @@ public class UserSocket extends Thread {
             while ((input = consoleInput.readLine()) != null && !input.equals("end")) {
                 writer.println(input);
             }
+
+            writer.println("end");
+            writer.flush();
         } catch (IOException e) {
             System.err.println("Error in UserSocket: " + e.getMessage());
         }
